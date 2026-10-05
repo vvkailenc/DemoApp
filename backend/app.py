@@ -6,7 +6,7 @@ Do NOT deploy to production or expose to the internet.
 import base64
 import hashlib
 import os
-import pickle
+import yaml
 import sqlite3
 import subprocess
 from pathlib import Path
@@ -283,7 +283,7 @@ def load_session():
     blob = data.get("data", "")
     try:
         decoded = base64.b64decode(blob)
-        obj = pickle.loads(decoded)  # VULN: pickle.loads on user input
+        obj = yaml.safe_load(decoded)
         return jsonify({"loaded": str(obj)})
     except Exception as e:
         return jsonify({"error": str(e)}), 400
