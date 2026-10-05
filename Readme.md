@@ -2,7 +2,7 @@
 
 **For local security testing only.** Do not deploy to production or expose to the internet.
 
-A small full-stack app with built-in vulnerabilities for testing:
+A small full-stack app with built-in vulnerabilities for testing:dddDd
 
 - SAST (static code analysis)
 - Secret scanning
